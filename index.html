@@ -6,49 +6,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GoStoryGo Splash</title>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon"/>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #fff;
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       height: 100vh;
-      font-family: 'Pacifico', cursive;
+      font-family: sans-serif;
+    }
+    #container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      z-index: 0;
     }
     #inkling {
+      position: absolute;
       width: 200px;
-      transition: transform 1s ease-in-out;
+      bottom: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 1s ease;
+      z-index: 2;
     }
     #logo {
+      position: absolute;
+      top: 40px;
       font-size: 2.5rem;
-      margin-top: 20px;
+      font-weight: bold;
+      z-index: 3;
+      color: transparent;
+      background: linear-gradient(to right, #2ecc71, #f1c40f, #3498db);
+      -webkit-background-clip: text;
+      background-clip: text;
       opacity: 0;
       transition: opacity 1s ease-in;
-      color: #2ecc71; /* Green */
-    }
-    #logo span:nth-child(2) {
-      color: #f1c40f; /* Gold */
-    }
-    #logo span:nth-child(3) {
-      color: #3498db; /* Blue */
     }
     #tagline {
-      margin-top: 10px;
-      font-size: 1.25rem;
-      color: #333;
+      position: absolute;
+      top: 100px;
+      text-align: center;
+      max-width: 90%;
+      font-size: 1.2rem;
+      color: #444;
       opacity: 0;
+      border-right: 2px solid;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid;
+      z-index: 3;
       animation:
         typing 4s steps(70, end) forwards,
         blink 0.75s step-end infinite;
+      animation-delay: 4s;
     }
-
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
@@ -59,34 +81,33 @@
   </style>
 </head>
 <body>
-
-  <img id="inkling" src="assets/Inkling_Transparent_Background.png" alt="Inkling Mascot" />
-  <div id="logo">
-    <span>Go</span><span>Story</span><span>Go</span>
+  <div id="container">
+    <img id="background" src="assets/book_on_table.png" alt="Book on table" />
+    <img id="inkling" src="assets/Inkling_Transparent_Background.png" alt="Inkling Mascot" />
+    <div id="logo">GoStoryGo</div>
+    <div id="tagline">You have found the easiest-to-use, most fun way to write, illustrate, and publish your own children’s books!</div>
   </div>
-  <div id="tagline">You have found the easiest-to-use, most fun way to write, illustrate, and publish your own children’s books!</div>
 
   <script>
     setTimeout(() => {
-      document.getElementById("inkling").style.transform = "rotate(-15deg) translateY(20px)";
-    }, 1000);
+      document.getElementById("inkling").style.transform = "translateX(-50%) rotate(-15deg)";
+    }, 800);
 
     setTimeout(() => {
-      document.getElementById("inkling").style.transform = "rotate(0deg) translateY(0)";
+      document.getElementById("inkling").style.transform = "translateX(-50%) rotate(0deg)";
     }, 2000);
 
     setTimeout(() => {
       document.getElementById("logo").style.opacity = 1;
-    }, 2800);
+    }, 3000);
 
     setTimeout(() => {
       document.getElementById("tagline").style.opacity = 1;
-    }, 3500);
+    }, 4000);
 
     setTimeout(() => {
       window.location.href = "main.html";
-    }, 9000);
+    }, 9500);
   </script>
-
 </body>
 </html>
