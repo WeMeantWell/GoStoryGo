@@ -2,7 +2,7 @@
 body {
   margin: 0;
   background-color: #fffaf3;
-  font-family: Arial, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   overflow: hidden;
 }
 
@@ -57,6 +57,18 @@ body {
   margin: 0;
 }
 
+.tagline {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #444;
+  opacity: 0;
+  animation: handwriting 2.5s steps(80, end) 5.5s forwards;
+  z-index: 3;
+}
+
 .green { color: #3cb043; }
 .orange { color: #e67e22; }
 .blue { color: #3498db; }
@@ -82,4 +94,9 @@ body {
 @keyframes popUp {
   0% { transform: translateX(-50%) translateY(80px); }
   100% { transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes handwriting {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

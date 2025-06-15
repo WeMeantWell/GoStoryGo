@@ -10,5 +10,9 @@ setTimeout(() => {
 }, 4800);
 
 setTimeout(() => {
-  window.location.href = "index.html";
-}, 7000);
+  document.getElementById("tagline").classList.remove("hidden");
+}, 5500);
+
+setTimeout(() => {
+  window.location.href = "main.html";
+}, 8000);
