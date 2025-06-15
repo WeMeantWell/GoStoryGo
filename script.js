@@ -2,7 +2,7 @@
 setTimeout(() => {
   document.getElementById("splash").classList.remove("hidden");
   document.getElementById("splash").style.opacity = "1";
-}, 4200);
+}, 4600);
 
 setTimeout(() => {
   document.getElementById("title").classList.remove("hidden");
@@ -11,4 +11,4 @@ setTimeout(() => {
 
 setTimeout(() => {
   window.location.href = "index.html";
-}, 6500);
+}, 7000);
