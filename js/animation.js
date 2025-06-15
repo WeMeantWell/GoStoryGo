@@ -1,1 +1,1 @@
-// Animation JS placeholder
+// Animation script

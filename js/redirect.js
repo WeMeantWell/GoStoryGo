@@ -1,1 +1,1 @@
-// Redirect logic placeholder
+// Redirect logic
