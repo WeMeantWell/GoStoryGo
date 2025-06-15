@@ -1,12 +1,7 @@
 
 setTimeout(() => {
-  const book = document.getElementById("book");
-  book.src = "img/book_open.png";
-}, 3000);
-
-setTimeout(() => {
   document.getElementById("splash").classList.remove("hidden");
-  document.getElementById("splash").classList.add("visible");
+  document.getElementById("splash").style.opacity = "1";
 }, 4200);
 
 setTimeout(() => {
