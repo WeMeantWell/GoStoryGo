@@ -1,17 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GoStoryGo</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div id="splash-container">
-    <img id="inkling" src="assets/Inkling.png" alt="Inkling Mascot" />
-    <div id="logo">GoStoryGo</div>
-    <div id="tagline"></div>
+  <div id="splash">
+    <img src="inkling.png" id="inkling" />
+    <div id="book">
+      <h1 class="logo">GoStoryGo</h1>
+      <svg id="handwriting" viewBox="0 0 800 200">
+        <path id="text-path" d="M 10 100 Q 50 50, 90 100 T 170 100 T 250 100 T 330 100 T 410 100 T 490 100 T 570 100 T 650 100"
+              stroke="#333" fill="none" stroke-width="2" />
+      </svg>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
