@@ -1,44 +1,62 @@
 
 body {
   margin: 0;
-  background: #fffaf3;
-  font-family: 'Arial', sans-serif;
+  background-color: #fffaf3;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-.splash-container {
+.scene {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
-.inkling img {
-  width: 180px;
+.table {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: auto;
-  animation: struggle 3s ease-in-out 0s 1, fall 0.6s ease-out 3s 1, ink-splash 1.5s ease-in 3.7s forwards;
 }
 
 .book {
-  width: 300px;
-  height: 30px;
-  background: #d9b98c;
-  margin-top: -60px;
-  border-radius: 6px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  transition: transform 1s ease-in-out;
+}
+
+.inkling {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  animation: pull-book 3s ease-in-out, fall-back 1s ease-out 3s forwards;
+}
+
+.splash {
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  width: 120px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
 }
 
 .title {
-  margin-top: 40px;
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
   opacity: 0;
   transition: opacity 1s ease-in;
 }
 
 .title h1 {
-  font-size: 2.8em;
+  font-size: 2.5rem;
   margin: 0;
 }
 
@@ -46,23 +64,23 @@ body {
 .orange { color: #e67e22; }
 .blue { color: #3498db; }
 
-.title.visible {
-  opacity: 1;
+.visible {
+  opacity: 1 !important;
 }
 
-@keyframes struggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(-10deg); }
-  50% { transform: rotate(10deg); }
-  75% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+.hidden {
+  display: none;
 }
 
-@keyframes fall {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(80px); }
+@keyframes pull-book {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  20% { transform: translateX(-50%) rotate(-5deg); }
+  40% { transform: translateX(-50%) rotate(5deg); }
+  60% { transform: translateX(-50%) rotate(-10deg); }
+  100% { transform: translateX(-50%) rotate(0deg); }
 }
 
-@keyframes ink-splash {
-  to { transform: translateY(0); }
+@keyframes fall-back {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(80px); }
 }
