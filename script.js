@@ -1,18 +1,8 @@
 
-setTimeout(() => {
-  document.getElementById("splash").classList.remove("hidden");
-  document.getElementById("splash").style.opacity = "1";
-}, 4300);
-
-setTimeout(() => {
-  document.getElementById("logo").classList.remove("hidden");
-  document.getElementById("logo").style.opacity = "1";
-}, 5000);
-
-setTimeout(() => {
-  document.getElementById("tagline").classList.remove("hidden");
-}, 5500);
-
-setTimeout(() => {
-  window.location.href = "main.html";
-}, 8500);
+window.onload = function() {
+    const tagline = document.getElementById("tagline");
+    tagline.textContent = "You have found the easiest-to-use, most fun way to write, illustrate, and publish your own children's books!";
+    setTimeout(() => {
+        window.location.href = "main.html";
+    }, 6500);
+};

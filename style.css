@@ -1,85 +1,44 @@
 
 body {
-  margin: 0;
-  background-color: #fffaf3;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    overflow: hidden;
+}
+#splash-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#inkling {
+    width: 200px;
+    animation: wiggle 1s ease-in-out infinite;
+}
+#logo {
+    font-size: 48px;
+    background: linear-gradient(to right, green, gold, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 20px 0 10px;
+}
+#tagline {
+    font-size: 18px;
+    color: #333;
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(80) 1s forwards;
 }
 
-.scene {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
+@keyframes typing {
+    to { width: 100%; }
 }
-
-.book {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 800px;
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-.inkling {
-  position: absolute;
-  bottom: 170px;
-  left: 50%;
-  width: 150px;
-  transform: translateX(-50%);
-  animation: bounce 4s ease-in-out;
-  z-index: 1;
-}
-
-.splash {
-  position: absolute;
-  bottom: 200px;
-  left: 50%;
-  width: 100px;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 1s ease-in;
-  z-index: 2;
-}
-
-.logo {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  font-size: 3rem;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 1s ease-in;
-  z-index: 3;
-}
-
-.logo span.green { color: #3cb043; }
-.logo span.orange { color: #e67e22; }
-.logo span.blue { color: #3498db; }
-
-.tagline {
-  position: absolute;
-  bottom: 40px;
-  width: 100%;
-  text-align: center;
-  font-size: 1.3rem;
-  color: #444;
-  opacity: 0;
-  animation: fadeIn 2s ease 5.5s forwards;
-  z-index: 3;
-}
-
-.hidden { display: none; }
-
-@keyframes bounce {
-  0% { transform: translateX(-50%) translateY(0); }
-  25% { transform: translateX(-50%) translateY(-20px); }
-  50% { transform: translateX(-50%) translateY(0); }
-  75% { transform: translateX(-50%) translateY(-10px); }
-  100% { transform: translateX(-50%) translateY(0); }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    75% { transform: rotate(-3deg); }
 }
