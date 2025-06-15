@@ -1,0 +1,68 @@
+
+body {
+  margin: 0;
+  background: #fffaf3;
+  font-family: 'Arial', sans-serif;
+}
+
+.splash-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inkling img {
+  width: 180px;
+  height: auto;
+  animation: struggle 3s ease-in-out 0s 1, fall 0.6s ease-out 3s 1, ink-splash 1.5s ease-in 3.7s forwards;
+}
+
+.book {
+  width: 300px;
+  height: 30px;
+  background: #d9b98c;
+  margin-top: -60px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.title {
+  margin-top: 40px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.title h1 {
+  font-size: 2.8em;
+  margin: 0;
+}
+
+.green { color: #3cb043; }
+.orange { color: #e67e22; }
+.blue { color: #3498db; }
+
+.title.visible {
+  opacity: 1;
+}
+
+@keyframes struggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes fall {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(80px); }
+}
+
+@keyframes ink-splash {
+  to { transform: translateY(0); }
+}
