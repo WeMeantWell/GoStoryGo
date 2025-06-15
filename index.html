@@ -6,18 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GoStoryGo</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <div id="splash">
-    <img src="inkling.png" id="inkling" />
-    <div id="book">
-      <h1 class="logo">GoStoryGo</h1>
-      <svg id="handwriting" viewBox="0 0 800 200">
-        <path id="text-path" d="M 10 100 Q 50 50, 90 100 T 170 100 T 250 100 T 330 100 T 410 100 T 490 100 T 570 100 T 650 100"
-              stroke="#333" fill="none" stroke-width="2" />
-      </svg>
-    </div>
+  <div class="splash-container">
+    <img id="inkling" src="inkling.png" alt="Inkling mascot" />
+    <div id="book" class="book"></div>
+    <h1 id="title"><span class="green">Go</span><span class="gold">Story</span><span class="blue">Go</span></h1>
+    <p id="tagline" class="handwriting">You have found the easiest-to-use, most fun way to write, illustrate, and publish your own children’s books!</p>
   </div>
   <script src="script.js"></script>
 </body>
