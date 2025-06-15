@@ -1,1 +1,92 @@
-<!-- Splash screen with Inkling animation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GoStoryGo Splash</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      font-family: 'Pacifico', cursive;
+    }
+    #inkling {
+      width: 200px;
+      transition: transform 1s ease-in-out;
+    }
+    #logo {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+      color: #2ecc71; /* Green */
+    }
+    #logo span:nth-child(2) {
+      color: #f1c40f; /* Gold */
+    }
+    #logo span:nth-child(3) {
+      color: #3498db; /* Blue */
+    }
+    #tagline {
+      margin-top: 10px;
+      font-size: 1.25rem;
+      color: #333;
+      opacity: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      animation:
+        typing 4s steps(70, end) forwards,
+        blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+</head>
+<body>
+
+  <img id="inkling" src="assets/Inkling_Transparent_Background.png" alt="Inkling Mascot" />
+  <div id="logo">
+    <span>Go</span><span>Story</span><span>Go</span>
+  </div>
+  <div id="tagline">You have found the easiest-to-use, most fun way to write, illustrate, and publish your own children’s books!</div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("inkling").style.transform = "rotate(-15deg) translateY(20px)";
+    }, 1000);
+
+    setTimeout(() => {
+      document.getElementById("inkling").style.transform = "rotate(0deg) translateY(0)";
+    }, 2000);
+
+    setTimeout(() => {
+      document.getElementById("logo").style.opacity = 1;
+    }, 2800);
+
+    setTimeout(() => {
+      document.getElementById("tagline").style.opacity = 1;
+    }, 3500);
+
+    setTimeout(() => {
+      window.location.href = "main.html";
+    }, 9000);
+  </script>
+
+</body>
+</html>
