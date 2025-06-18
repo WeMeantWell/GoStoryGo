@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 2300);
 
   setTimeout(() => {
-    inkling.style.top = '38%';
+    inkling.style.top = '40%';
   }, 2800);
 
   setTimeout(() => {
