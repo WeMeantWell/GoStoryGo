@@ -1,46 +1,49 @@
-// splash.js - Inkling jumps to center, squirts ink, logo appears
+document.addEventListener('DOMContentLoaded', () => {
+  const inkling = document.getElementById('inkling');
+  const book = document.getElementById('book');
+  const ink = document.getElementById('ink-squirt');
+  const logo = document.querySelector('.logo');
+  const tagline = document.querySelector('.tagline');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const inkling = document.getElementById("inkling");
-  const book = document.getElementById("book");
-  const logo = document.querySelector(".logo");
-  const tagline = document.querySelector(".tagline");
-  const inkSquirt = document.getElementById("ink-squirt");
-
-  inkling.classList.add("enter-stage");
-
-  setTimeout(() => {
-    book.src = "assets/images/book-slight.png";
-    inkling.classList.add("struggle");
-  }, 1000);
+  // Step 1: Closed Book
+  book.src = 'assets/images/book-closed.png';
 
   setTimeout(() => {
-    book.src = "assets/images/book-opening.png";
-  }, 1700);
+    book.src = 'assets/images/book-slight.png';
+  }, 800);
 
   setTimeout(() => {
-    book.src = "assets/images/book-open.png";
-    inkling.classList.remove("struggle");
-    inkling.classList.add("fall-back");
-  }, 2500);
+    book.src = 'assets/images/book-open.png';
+  }, 1600);
 
   setTimeout(() => {
-    inkling.classList.remove("fall-back");
-    inkling.classList.add("jump-up-center");
-  }, 3500);
+    // Inkling falls and jumps up
+    inkling.style.top = '70%';
+  }, 2300);
 
   setTimeout(() => {
-    inkSquirt.classList.add("squirt-visible");
-  }, 4200);
+    // Inkling jumps up to center
+    inkling.style.top = '35%';
+  }, 2800);
 
   setTimeout(() => {
-    inkSquirt.classList.add("squirt-drip-away");
-    logo.classList.remove("hidden");
-    logo.classList.add("drip-in");
-  }, 5400);
+    // Ink squirt effect
+    ink.style.display = 'block';
+  }, 3400);
 
   setTimeout(() => {
-    tagline.classList.remove("hidden");
-    tagline.classList.add("fade-in");
-  }, 6200);
+    // Reveal logo
+    logo.style.display = 'block';
+  }, 4100);
+
+  setTimeout(() => {
+    // Hide ink
+    ink.style.display = 'none';
+  }, 4700);
+
+  setTimeout(() => {
+    // Return Inkling to bottom
+    inkling.style.top = '55%';
+    tagline.style.display = 'block';
+  }, 5200);
 });

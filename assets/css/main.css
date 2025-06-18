@@ -1,139 +1,86 @@
-/* main.css - Final GoStoryGo Splash with centered jump and ink squirt */
-
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #fff;
-  overflow: hidden;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 #splash-screen {
-  position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: white;
 }
 
 #animation-stage {
-  position: relative;
-  width: 600px;
-  height: 400px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
 
 #inkling {
   position: absolute;
-  bottom: 0;
-  left: -100px;
-  width: 150px;
-  transition: left 1s ease-in-out;
-  z-index: 3;
-}
-
-#inkling.enter-stage {
-  left: 100px;
-}
-
-#inkling.struggle {
-  animation: shake 0.4s ease-in-out infinite;
-}
-
-#inkling.fall-back {
-  animation: fallBack 0.8s forwards;
-}
-
-#inkling.jump-up-center {
-  animation: jumpToCenter 1s ease-out forwards;
+  width: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 55%;
+  z-index: 2;
+  transition: top 0.4s ease;
 }
 
 #book {
   position: absolute;
-  bottom: 0;
-  left: 250px;
-  width: 200px;
-  transition: transform 0.5s ease;
+  width: 400px;
+  height: 300px;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: all 0.4s ease;
 }
 
 #ink-squirt {
   position: absolute;
-  top: 60px;
+  top: 35%;
   left: 50%;
-  width: 380px;
-  height: 280px;
-  background: url('../images/ink-splotch.png') no-repeat center center;
+  width: 500px;
+  height: 300px;
+  background-image: url('../images/ink-splotch.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
-  opacity: 0;
-  transform: translateX(-50%) scale(0.5);
-  transition: all 0.4s ease-out;
-  z-index: 1;
-}
-
-#ink-squirt.squirt-visible {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-#ink-squirt.squirt-drip-away {
-  animation: inkDripAway 1s forwards;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 3;
 }
 
 .logo {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 3rem;
-  margin: 20px 0;
+  font-weight: bold;
+  display: none;
   z-index: 4;
-  opacity: 0;
 }
-
-.logo.drip-in {
-  animation: fadeInDrip 1s ease forwards;
-}
-
-.go-green { color: #2f9231; }
-.story-gold { color: #e68713; }
-.go-blue { color: #0788bf; }
-
-.logo.hidden { display: none; }
 
 .tagline {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
   font-size: 1.2rem;
-  max-width: 600px;
-  opacity: 0;
-  transition: opacity 1.2s ease;
+  font-family: 'Comic Sans MS', cursive;
+  display: none;
+  z-index: 4;
 }
 
-.tagline.fade-in {
-  opacity: 1;
-}
+.go-blue { color: #1caad9; }
+.story-gold { color: #f4c613; }
+.go-green { color: #4caf50; }
 
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes fallBack {
-  0% { transform: rotate(0deg) translateY(0); }
-  100% { transform: rotate(-70deg) translateY(100px); }
-}
-
-@keyframes jumpToCenter {
-  0% { bottom: 0; left: 100px; transform: scale(1); }
-  50% { bottom: 120px; left: 220px; transform: scale(1.1); }
-  100% { bottom: 160px; left: 220px; transform: scale(1); }
-}
-
-@keyframes fadeInDrip {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes inkDripAway {
-  0% { opacity: 1; transform: translateX(-50%) scale(1); }
-  100% { opacity: 0; transform: translateX(-50%) scale(0.3); }
-}
+.hidden { display: none; }
