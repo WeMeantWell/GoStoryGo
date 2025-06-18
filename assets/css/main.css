@@ -1,0 +1,139 @@
+/* main.css - Final GoStoryGo Splash with centered jump and ink squirt */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+#splash-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#animation-stage {
+  position: relative;
+  width: 600px;
+  height: 400px;
+}
+
+#inkling {
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  width: 150px;
+  transition: left 1s ease-in-out;
+  z-index: 3;
+}
+
+#inkling.enter-stage {
+  left: 100px;
+}
+
+#inkling.struggle {
+  animation: shake 0.4s ease-in-out infinite;
+}
+
+#inkling.fall-back {
+  animation: fallBack 0.8s forwards;
+}
+
+#inkling.jump-up-center {
+  animation: jumpToCenter 1s ease-out forwards;
+}
+
+#book {
+  position: absolute;
+  bottom: 0;
+  left: 250px;
+  width: 200px;
+  transition: transform 0.5s ease;
+}
+
+#ink-squirt {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: 380px;
+  height: 280px;
+  background: url('../images/ink-splotch.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.5);
+  transition: all 0.4s ease-out;
+  z-index: 1;
+}
+
+#ink-squirt.squirt-visible {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+#ink-squirt.squirt-drip-away {
+  animation: inkDripAway 1s forwards;
+}
+
+.logo {
+  font-size: 3rem;
+  margin: 20px 0;
+  z-index: 4;
+  opacity: 0;
+}
+
+.logo.drip-in {
+  animation: fadeInDrip 1s ease forwards;
+}
+
+.go-green { color: #2f9231; }
+.story-gold { color: #e68713; }
+.go-blue { color: #0788bf; }
+
+.logo.hidden { display: none; }
+
+.tagline {
+  font-size: 1.2rem;
+  max-width: 600px;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.tagline.fade-in {
+  opacity: 1;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fallBack {
+  0% { transform: rotate(0deg) translateY(0); }
+  100% { transform: rotate(-70deg) translateY(100px); }
+}
+
+@keyframes jumpToCenter {
+  0% { bottom: 0; left: 100px; transform: scale(1); }
+  50% { bottom: 120px; left: 220px; transform: scale(1.1); }
+  100% { bottom: 160px; left: 220px; transform: scale(1); }
+}
+
+@keyframes fadeInDrip {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes inkDripAway {
+  0% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.3); }
+}
