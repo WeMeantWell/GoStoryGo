@@ -44,7 +44,7 @@ body {
 
 #ink-squirt {
   position: absolute;
-  top: 20%;
+  top: 18%;
   left: 50%;
   width: 500px;
   height: 300px;
@@ -59,7 +59,7 @@ body {
 
 .logo {
   position: absolute;
-  top: 25%;
+  top: 18%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 3rem;

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 2300);
 
   setTimeout(() => {
-    inkling.style.top = '30%';
+    inkling.style.top = '38%';
   }, 2800);
 
   setTimeout(() => {
@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
     ink.style.display = 'none';
-  }, 4200);
+  }, 4700);
 
   setTimeout(() => {
     logo.style.display = 'block';
-  }, 4500);
+  }, 5000);
 
   setTimeout(() => {
     inkling.style.top = '55%';
     tagline.style.display = 'block';
-  }, 5200);
+  }, 5600);
 });
