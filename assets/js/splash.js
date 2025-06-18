@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.logo');
   const tagline = document.querySelector('.tagline');
 
+  // Reset initial states
+  inkling.style.top = '55%';
+  logo.style.display = 'none';
+  ink.style.display = 'none';
+  tagline.style.display = 'none';
+
   book.src = 'assets/images/book-closed.png';
 
   setTimeout(() => {

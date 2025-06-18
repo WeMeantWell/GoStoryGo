@@ -81,6 +81,7 @@ body {
   display: none;
   z-index: 4;
   white-space: normal;
+  word-break: break-word;
 }
 
 .go-blue { color: #1caad9; }
