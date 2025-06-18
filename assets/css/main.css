@@ -44,7 +44,7 @@ body {
 
 #ink-squirt {
   position: absolute;
-  top: 35%;
+  top: 20%;
   left: 50%;
   width: 500px;
   height: 300px;
@@ -54,7 +54,7 @@ body {
   background-size: contain;
   transform: translateX(-50%);
   display: none;
-  z-index: 3;
+  z-index: 4;
 }
 
 .logo {
@@ -65,7 +65,7 @@ body {
   font-size: 3rem;
   font-weight: bold;
   display: none;
-  z-index: 4;
+  z-index: 5;
 }
 
 .tagline {

@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.logo');
   const tagline = document.querySelector('.tagline');
 
-  // Step 1: Closed Book
   book.src = 'assets/images/book-closed.png';
 
   setTimeout(() => {
@@ -17,32 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1600);
 
   setTimeout(() => {
-    // Inkling falls and jumps up
     inkling.style.top = '70%';
   }, 2300);
 
   setTimeout(() => {
-    // Inkling jumps up to center
-    inkling.style.top = '35%';
+    inkling.style.top = '30%';
   }, 2800);
 
   setTimeout(() => {
-    // Ink squirt effect
     ink.style.display = 'block';
   }, 3400);
 
   setTimeout(() => {
-    // Reveal logo
-    logo.style.display = 'block';
-  }, 4100);
-
-  setTimeout(() => {
-    // Hide ink
     ink.style.display = 'none';
-  }, 4700);
+  }, 4200);
 
   setTimeout(() => {
-    // Return Inkling to bottom
+    logo.style.display = 'block';
+  }, 4500);
+
+  setTimeout(() => {
     inkling.style.top = '55%';
     tagline.style.display = 'block';
   }, 5200);
