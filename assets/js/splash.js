@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.getElementById('logo');
   const tagline = document.getElementById('tagline');
 
-  // Reset
+  // Ensure all elements reset
   ink.style.display = 'none';
   logo.style.display = 'none';
   tagline.style.display = 'none';
+  book.style.display = 'block';
   inkling.style.top = '55%';
   book.src = 'assets/images/book-closed.png';
 
