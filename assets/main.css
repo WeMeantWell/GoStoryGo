@@ -36,13 +36,14 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 400px;
+  display: block;
   z-index: 1;
 }
 
 #ink-squirt {
   position: absolute;
-  top: 12%;
-  left: 50%;
+  top: 10%;
+  left: 52%;
   transform: translateX(-50%);
   width: 480px;
   height: 280px;
