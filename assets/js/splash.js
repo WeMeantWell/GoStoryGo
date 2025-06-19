@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.logo');
   const tagline = document.querySelector('.tagline');
 
-  // Reset initial states
+  // Reset initial states to prevent duplication
   inkling.style.top = '55%';
-  logo.style.display = 'none';
+  inkling.style.display = 'block';
   ink.style.display = 'none';
+  logo.style.display = 'none';
   tagline.style.display = 'none';
 
+  // Book sequence
   book.src = 'assets/images/book-closed.png';
 
   setTimeout(() => {
@@ -21,28 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
     book.src = 'assets/images/book-open.png';
   }, 1600);
 
+  // Inkling crouch and jump
   setTimeout(() => {
     inkling.style.top = '70%';
   }, 2300);
 
   setTimeout(() => {
-    inkling.style.top = '40%';
+    inkling.style.top = '35%';
   }, 2800);
 
+  // Ink splash appears
   setTimeout(() => {
     ink.style.display = 'block';
+    logo.style.display = 'none';
   }, 3400);
 
+  // Ink splash fades and logo appears
   setTimeout(() => {
     ink.style.display = 'none';
+    logo.style.display = 'block';
   }, 4700);
 
-  setTimeout(() => {
-    logo.style.display = 'block';
-  }, 5000);
-
+  // Inkling returns to base and tagline appears
   setTimeout(() => {
     inkling.style.top = '55%';
     tagline.style.display = 'block';
-  }, 5600);
+  }, 5200);
 });
